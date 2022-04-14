@@ -15,9 +15,11 @@ const SearchFilter = () => {
 
   const onSearchInputSubmit = (event) => {
     event.preventDefault();
-    setSearchText(searchInput);
-    setSearchInput("");
-    navigate("/search");
+    if (searchInput) {
+      setSearchText(searchInput);
+      setSearchInput("");
+      navigate("/search");
+    }
   };
 
   return (

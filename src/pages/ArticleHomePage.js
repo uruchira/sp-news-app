@@ -11,7 +11,7 @@ function TopNewsSection() {
   const { status, data, error, isFetching } = useArticles({
     newsType: "news",
     sortingOption,
-    pageSize: 8,
+    pageSize: 9,
   });
 
   return (
