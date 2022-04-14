@@ -1,14 +1,21 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import useGlobalState from "../hooks/useGlobalState";
 
 const ArticleSavedPage = () => {
-  const { bookmarks } = useGlobalState();
+  const { sortingOption, setSortingOption, bookmarks } = useGlobalState();
+
+  useEffect(
+    () => {
+      if (sortingOption === "oldest") setSortingOption("newest");
+    }, //eslint-disable-next-line
+    []
+  );
 
   return (
     <>
       <Link to="/">Back to News Page</Link>
-      <br />
       <br />
       <p>All bookmarks</p>
       <br />

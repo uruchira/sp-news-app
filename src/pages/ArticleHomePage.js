@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Sorting from "../components/Sorting";
@@ -67,10 +68,20 @@ function SportNewsSection() {
   );
 }
 
-const ArticleHomePage = () => {
+function ArticleHomePage() {
+  const { sortingOption, setSortingOption } = useGlobalState();
+
+  useEffect(
+    () => {
+      if (sortingOption === "oldest") setSortingOption("newest");
+    }, //eslint-disable-next-line
+    []
+  );
+
   return (
     <>
       <Sorting />
+      <br />
       <br />
       <TopNewsSection />
       <br />
@@ -79,6 +90,6 @@ const ArticleHomePage = () => {
       <SportNewsSection />
     </>
   );
-};
+}
 
 export default ArticleHomePage;

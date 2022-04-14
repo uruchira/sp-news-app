@@ -18,6 +18,18 @@ const queryClient = new QueryClient({
   },
 });
 
+// const activities = [
+//   { title: "HikingSo", date: new Date("2019-06-30") },
+//   { title: "Shopping", date: new Date("2019-06-10") },
+//   { title: "Trekking", date: new Date("2019-06-20") },
+// ];
+
+//const newestActivities = activities.slice().sort((a, b) => b.date - a.date);
+//const oldestActivities = activities.slice().sort((a, b) => a.date - b.date);
+
+//console.log(newestActivities);
+//console.log(oldestActivities);
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>

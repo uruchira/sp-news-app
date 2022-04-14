@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Sorting from "../components/Sorting";
@@ -5,8 +6,9 @@ import Sorting from "../components/Sorting";
 import useGlobalState from "../hooks/useGlobalState";
 import useArticles from "../hooks/useArticles";
 
-const SearchResultsView = ({ qparams }) => {
+function SearchResultList({ qparams }) {
   const { status, data, error, isFetching } = useArticles(qparams);
+  const filteredArticles = data?.response.results;
 
   return (
     <>
@@ -17,7 +19,7 @@ const SearchResultsView = ({ qparams }) => {
       ) : (
         <>
           <i>{isFetching ? "Updating..." : ""}</i>
-          {data.response.results.map((newsItem) => (
+          {filteredArticles.map((newsItem) => (
             <div key={newsItem.id}>
               <Link to={`/${newsItem.id}`}>{newsItem.webTitle}</Link>
             </div>
@@ -26,23 +28,32 @@ const SearchResultsView = ({ qparams }) => {
       )}
     </>
   );
-};
+}
 
-const ArticleSearchPage = () => {
-  const { searchText, sortingOption } = useGlobalState();
+function ArticleSearchPage() {
+  const { searchText, sortingOption, setSortingOption } = useGlobalState();
+
+  useEffect(
+    () => {
+      if (sortingOption === "oldest") setSortingOption("newest");
+    }, //eslint-disable-next-line
+    []
+  );
 
   return (
     <>
       <h2>Search Results</h2>
-      <Sorting />
-      <br />
       {searchText ? (
-        <SearchResultsView qparams={{ searchText, sortingOption }} />
+        <>
+          <Sorting />
+          <br />
+          <SearchResultList qparams={{ searchText, sortingOption }} />
+        </>
       ) : (
-        <p>This is a empty page</p>
+        <p>No search text is found</p>
       )}
     </>
   );
-};
+}
 
 export default ArticleSearchPage;
