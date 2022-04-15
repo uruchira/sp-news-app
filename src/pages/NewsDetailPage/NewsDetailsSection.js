@@ -1,13 +1,7 @@
-import { Link, useParams } from "react-router-dom";
+import useArticle from "../../hooks/useArticle";
+import useGlobalState from "../../hooks/useGlobalState";
 
-import useArticle from "../hooks/useArticle";
-import useGlobalState from "../hooks/useGlobalState";
-
-function formatArticleId(articleName) {
-  return Object.values(articleName).join("/");
-}
-
-function ArticleDetailView({ id }) {
+function DetailsSection({ id }) {
   const { status, data, error, isFetching } = useArticle(id);
   const { bookmarks, addBookmark, removeBookmark } = useGlobalState();
 
@@ -42,19 +36,4 @@ function ArticleDetailView({ id }) {
   );
 }
 
-function ArticleDetailPage() {
-  const formattedId = formatArticleId(useParams());
-
-  return (
-    <>
-      <Link to="/">Back to News Page</Link>
-      {formattedId ? (
-        <ArticleDetailView id={formattedId} />
-      ) : (
-        <p>No Article ID is found</p>
-      )}
-    </>
-  );
-}
-
-export default ArticleDetailPage;
+export default DetailsSection;

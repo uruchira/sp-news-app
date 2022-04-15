@@ -1,18 +1,10 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
-import Sorting from "../components/Sorting";
-import useGlobalState from "../hooks/useGlobalState";
+import useGlobalState from "../../hooks/useGlobalState";
 
-const ArticleSavedPage = () => {
-  const { sortingOption, setSortingOption, bookmarks } = useGlobalState();
-
-  useEffect(
-    () => {
-      if (sortingOption === "oldest") setSortingOption("newest");
-    }, //eslint-disable-next-line
-    []
-  );
+const NewsSavedSection = () => {
+  const { sortingOption, bookmarks } = useGlobalState();
 
   const formattedBookmarks = useMemo(() => {
     if (sortingOption === "newest") {
@@ -34,14 +26,8 @@ const ArticleSavedPage = () => {
 
   return (
     <>
-      <Link to="/">Back to News Page</Link>
-      <br />
       {formattedBookmarks.length ? (
         <>
-          <p>All bookmarks</p>
-          <br />
-          <Sorting />
-          <br />
           {formattedBookmarks.map((newsItem) => (
             <div key={newsItem.id}>
               <Link to={`/${newsItem.id}`}>{newsItem.webTitle}</Link>
@@ -55,4 +41,4 @@ const ArticleSavedPage = () => {
   );
 };
 
-export default ArticleSavedPage;
+export default NewsSavedSection;
