@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
-import AppLayout from "../components/AppLayout";
+import MainContent from "../components/MainContent";
 import Loading from "../components/Loading";
 
 import {
@@ -22,7 +22,7 @@ function AppRoutes() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
-        <Route element={<AppLayout />}>
+        <Route element={<MainContent />}>
           <Route index element={<NewsHomePage />} />
           <Route path={HOME_PATH} element={<NewsHomePage />} />
           <Route path={DETAIL_PATH} element={<NewsDetailPage />}>

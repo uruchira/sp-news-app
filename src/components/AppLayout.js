@@ -1,17 +1,14 @@
-import { Outlet } from "react-router-dom";
-
+import AppRoutes from "../components/AppRoutes";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const AppLayout = () => {
   return (
-    <main>
+    <>
       <Header />
-      <section style={{ minHeight: "80vh" }}>
-        <Outlet />
-      </section>
+      <AppRoutes />
       <Footer />
-    </main>
+    </>
   );
 };
 
