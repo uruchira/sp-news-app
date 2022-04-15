@@ -1,8 +1,15 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
+import AppLayout from "../components/AppLayout";
 import Loading from "../components/Loading";
-import PageLayout from "../components/PageLayout";
+
+import {
+  HOME_PATH,
+  DETAIL_PATH,
+  SEARCH_PATH,
+  BOOKMARKS_PATH,
+} from "../constants";
 
 const NewsDetailPage = lazy(() => import("../pages/NewsDetailPage"));
 const NewsHomePage = lazy(() => import("../pages/NewsHomePage"));
@@ -11,18 +18,18 @@ const NewsSearchPage = lazy(() => import("../pages/NewsSearchPage"));
 
 const NoMatchPage = lazy(() => import("../pages/NoMatchPage"));
 
-function PageRoutes() {
+function AppRoutes() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
-        <Route element={<PageLayout />}>
+        <Route element={<AppLayout />}>
           <Route index element={<NewsHomePage />} />
-          <Route path="/" element={<NewsHomePage />} />
-          <Route path="/search" element={<NewsSearchPage />} />
-          <Route path="/bookmarks" element={<NewsSavedPage />} />
-          <Route path="/:articleId" element={<NewsDetailPage />}>
+          <Route path={HOME_PATH} element={<NewsHomePage />} />
+          <Route path={DETAIL_PATH} element={<NewsDetailPage />}>
             <Route path="*" element={<Link to=".." />} />
           </Route>
+          <Route path={SEARCH_PATH} element={<NewsSearchPage />} />
+          <Route path={BOOKMARKS_PATH} element={<NewsSavedPage />} />
           <Route path="*" element={<NoMatchPage />} />
         </Route>
       </Routes>
@@ -30,4 +37,4 @@ function PageRoutes() {
   );
 }
 
-export default PageRoutes;
+export default AppRoutes;

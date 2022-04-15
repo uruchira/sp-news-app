@@ -2,11 +2,8 @@ import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Global } from "@emotion/react";
 
+import AppRoutes from "./components/AppRoutes";
 import { GlobalStateProvider } from "./contexts/globalStateContext";
-
-import PageFooter from "./components/PageFooter";
-import PageHeader from "./components/PageHeader";
-import PageRoutes from "./components/PageRoutes";
 
 import globalStyles from "./styles/globalStyles";
 
@@ -23,11 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <GlobalStateProvider>
         <Global styles={globalStyles} />
-        <PageHeader />
-        <main style={{ padding: "1rem 0", minHeight: "80vh" }}>
-          <PageRoutes />
-        </main>
-        <PageFooter />
+        <AppRoutes />
       </GlobalStateProvider>
     </QueryClientProvider>
   );
