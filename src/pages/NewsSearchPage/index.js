@@ -17,16 +17,9 @@ function ArticleSearchPage() {
 
   return (
     <>
-      <h2>Search Results</h2>
-      {searchText ? (
-        <>
-          <Sorting />
-          <br />
-          <SearchResultsSection qparams={{ searchText, sortingOption }} />
-        </>
-      ) : (
-        <p>No search text is found</p>
-      )}
+      <Sorting />
+      <br />
+      <SearchResultsSection qparams={{ searchText, sortingOption }} />
     </>
   );
 }

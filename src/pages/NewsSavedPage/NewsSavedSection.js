@@ -1,12 +1,12 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import NewsGrid from "../../components/NewsGrid";
 
 import useGlobalState from "../../hooks/useGlobalState";
 
 const NewsSavedSection = () => {
   const { sortingOption, bookmarks } = useGlobalState();
 
-  const formattedBookmarks = useMemo(() => {
+  const sortedBookmarks = useMemo(() => {
     if (sortingOption === "newest") {
       return bookmarks
         .slice()
@@ -26,14 +26,8 @@ const NewsSavedSection = () => {
 
   return (
     <>
-      {formattedBookmarks.length ? (
-        <>
-          {formattedBookmarks.map((newsItem) => (
-            <div key={newsItem.id}>
-              <Link to={`/${newsItem.id}`}>{newsItem.webTitle}</Link>
-            </div>
-          ))}
-        </>
+      {sortedBookmarks.length ? (
+        <NewsGrid newsItems={sortedBookmarks} />
       ) : (
         <p>No Bookmarks yet...</p>
       )}

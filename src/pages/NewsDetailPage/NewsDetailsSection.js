@@ -14,13 +14,12 @@ function DetailsSection({ id }) {
   return (
     <div>
       {status === "loading" ? (
-        "Loading, Calling to API....."
+        "Calling to API....."
       ) : status === "error" ? (
         <i>Error: {error.message}</i>
       ) : (
         <>
-          <i>{isFetching ? "Updating..." : ""}</i>
-          <h1>{singleArticle.webTitle}</h1>
+          <i>{isFetching ? "Data fetching..." : ""}</i>
           {isBookmarked() ? (
             <button type="button" onClick={() => removeBookmark(singleArticle)}>
               Remove Bookmark
@@ -30,6 +29,7 @@ function DetailsSection({ id }) {
               Add Bookmark
             </button>
           )}
+          <h1>{singleArticle.webTitle}</h1>
         </>
       )}
     </div>

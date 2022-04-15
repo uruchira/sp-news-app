@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import NewsGrid from "../../components/NewsGrid";
 
 import useArticles from "../../hooks/useArticles";
 import useGlobalState from "../../hooks/useGlobalState";
@@ -15,20 +15,12 @@ function SportNewsSection() {
     <>
       <h3>Sports</h3>
       <div>
-        {status === "loading" ? (
-          "Loading, Calling to API....."
-        ) : status === "error" ? (
-          <i>Error: {error.message}</i>
-        ) : (
-          <>
-            <i>{isFetching ? "Updating..." : ""}</i>
-            {data.response.results.map((newsItem) => (
-              <div key={newsItem.id}>
-                <Link to={`/${newsItem.id}`}>{newsItem.webTitle}</Link>
-              </div>
-            ))}
-          </>
-        )}
+        <NewsGrid
+          status={status}
+          error={error}
+          isFetching={isFetching}
+          newsItems={data?.response.results}
+        />
       </div>
     </>
   );
