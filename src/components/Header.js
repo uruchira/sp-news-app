@@ -6,11 +6,9 @@ import SearchFilter from "./SearchFilter";
 const Header = () => {
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <div style={{ marginRight: "20px" }}>
-          <h1>This is HEADER</h1>
-          <Link to="/">News Page</Link>&nbsp;&nbsp;&nbsp;
-          <Link to="/bookmarks">Bookmarks Page</Link>
+      <div style={{ display: "flex", marginBottom: "20px" }}>
+        <div className="logo">
+          <Link to="/">The Peak News</Link>
         </div>
         <SearchFilter />
       </div>

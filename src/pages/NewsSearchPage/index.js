@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-import Sorting from "../../components/Sorting";
 import SearchResultsSection from "./SearchResultsSection";
 
 import useGlobalState from "../../hooks/useGlobalState";
@@ -17,8 +16,7 @@ function ArticleSearchPage() {
 
   return (
     <>
-      <Sorting />
-      <br />
+      <h3>Search Results</h3>
       <SearchResultsSection qparams={{ searchText, sortingOption }} />
     </>
   );

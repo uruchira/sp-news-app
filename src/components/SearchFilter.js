@@ -23,7 +23,7 @@ const SearchFilter = () => {
   };
 
   return (
-    <div style={{ height: "40px" }}>
+    <div style={{ height: "40px", display: "flex" }}>
       <input type="text" value={searchInput} onChange={onSearchInputChange} />
       <button type="button" onClick={onSearchInputSubmit}>
         Search

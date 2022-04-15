@@ -7,21 +7,18 @@ function SearchResultList({ qparams }) {
   const searchResults = data?.response.results;
 
   return (
-    <>
-      <h3>Search Results</h3>
-      <div>
-        {qparams.searchText ? (
-          <NewsGrid
-            status={status}
-            error={error}
-            isFetching={isFetching}
-            newsItems={searchResults}
-          />
-        ) : (
-          <p>No search text is found</p>
-        )}
-      </div>
-    </>
+    <div>
+      {qparams.searchText ? (
+        <NewsGrid
+          status={status}
+          error={error}
+          isFetching={isFetching}
+          newsItems={searchResults}
+        />
+      ) : (
+        <p>No search text is found</p>
+      )}
+    </div>
   );
 }
 

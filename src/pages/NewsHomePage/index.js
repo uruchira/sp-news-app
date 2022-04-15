@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-import Sorting from "../../components/Sorting";
 import TopNewsSection from "./TopNewsSection";
 import SportNewsSection from "./SportNewsSection";
 
@@ -18,9 +17,6 @@ function ArticleHomePage() {
 
   return (
     <>
-      <Sorting />
-      <br />
-      <br />
       <TopNewsSection />
       <br />
       <hr />

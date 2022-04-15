@@ -51,6 +51,14 @@ const globalStyles = css`
     box-shadow: 0 0 0px 1000px #ffffff inset !important;
   }
 
+  .logo {
+    margin-right: 50px;
+  }
+
+  .logo a {
+    font-size: 2rem;
+  }
+
   @media print {
     html {
       font-size: 9px;
