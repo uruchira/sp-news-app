@@ -15,6 +15,7 @@ function isNewsSavedPage(pathname) {
 
 const SubHeader = () => {
   const location = useLocation();
+
   return (
     <div
       style={{

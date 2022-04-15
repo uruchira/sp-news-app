@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 
 import NewsDetailsSection from "./NewsDetailsSection";
 
+import { HOME_PATH } from "../../constants";
+
 function formatNewsId(articleName) {
   return Object.values(articleName).join("/");
 }
@@ -11,7 +13,7 @@ function ArticleDetailPage() {
 
   return (
     <>
-      <Link to="/">Back to News Page</Link>
+      <Link to={HOME_PATH}>Back</Link>
       {formattedId ? (
         <NewsDetailsSection id={formattedId} />
       ) : (
