@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 import { NewsList } from "../styles/layout";
 
@@ -8,12 +9,12 @@ const NewsGrid = ({ status, error, isFetching, newsItems = [] }) => {
   return (
     <NewsList>
       {status === "loading" ? (
-        "Calling to API....."
+        <Loading />
       ) : status === "error" ? (
         <i>Error: {error.message}</i>
       ) : (
         <>
-          <i>{isFetching ? "Data fetching..." : ""}</i>
+          <i>{isFetching ? <Loading /> : ""}</i>
           {newsItems.map((newsItem) => (
             <Link to={`/${newsItem.id}`} key={newsItem.id}>
               <Card title={newsItem.webTitle} bodyText={newsItem.webTitle} />

@@ -1,3 +1,5 @@
+import Loading from "../../components/Loading";
+
 import useArticle from "../../hooks/useArticle";
 import useGlobalState from "../../hooks/useGlobalState";
 
@@ -14,12 +16,12 @@ function DetailsSection({ id }) {
   return (
     <div>
       {status === "loading" ? (
-        "Calling to API....."
+        <Loading />
       ) : status === "error" ? (
         <i>Error: {error.message}</i>
       ) : (
         <>
-          <i>{isFetching ? "Data fetching..." : ""}</i>
+          <i>{isFetching ? <Loading /> : ""}</i>
           {isBookmarked() ? (
             <button type="button" onClick={() => removeBookmark(singleArticle)}>
               Remove Bookmark
