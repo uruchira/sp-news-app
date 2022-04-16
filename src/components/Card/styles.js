@@ -5,10 +5,10 @@ import placeholderTwo from "../../assets/peaks.png";
 export const CardWrapper = styled.div`
   color: white;
   width: 350px;
-  height: 350px;
-  &:hover {
-    color: white;
+  & h1 {
+    min-height: 90px;
   }
+
   & h1,
   & p {
     padding: 10px 18px;
@@ -19,7 +19,7 @@ export const CardWrapper = styled.div`
     font-weight: 400;
     font-size: 0.8rem;
     line-height: 20px;
-    min-height: 38px;
+    min-height: 60px;
   }
 `;
 

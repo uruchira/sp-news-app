@@ -16,14 +16,13 @@ function SportNewsSection() {
   return (
     <>
       <BaseSubHeader>Sports</BaseSubHeader>
-      <div>
-        <NewsGrid
-          status={status}
-          error={error}
-          isFetching={isFetching}
-          newsItems={data?.response.results}
-        />
-      </div>
+      <br />
+      <NewsGrid
+        status={status}
+        error={error}
+        isFetching={isFetching}
+        newsItems={data?.response.results}
+      />
     </>
   );
 }

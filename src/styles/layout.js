@@ -71,3 +71,14 @@ export const SortingSection = styled.div`
     margin-right: 1.5rem;
   }
 `;
+
+export const NewsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  & a {
+    margin: 0 75px 35px 0;
+  }
+  & a:nth-of-type(3n) {
+    margin-right: 0;
+  }
+`;
