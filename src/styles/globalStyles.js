@@ -24,6 +24,7 @@ const globalStyles = css`
   }
 
   body {
+    background-color: #09357b;
     margin: 0;
     font-size: 14px;
     font-family: "georgia-regular", Arial, sans-serif;
@@ -44,7 +45,6 @@ const globalStyles = css`
   a:active,
   a:visited {
     text-decoration: none;
-    color: brown;
   }
 
   input:-webkit-autofill,
@@ -56,19 +56,6 @@ const globalStyles = css`
   select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
     box-shadow: 0 0 0px 1000px #ffffff inset !important;
-  }
-
-  .main-wrapper {
-    background-color: #fff;
-    padding-top: 1rem;
-    width: 100%;
-  }
-
-  .main-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 1200px;
   }
 
   @media print {

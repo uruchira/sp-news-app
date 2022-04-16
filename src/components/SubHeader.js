@@ -1,8 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import Sorting from "./Sorting";
 
 import { HOME_PATH, SEARCH_PATH, BOOKMARKS_PATH } from "../constants";
+
+import { SubHeaderWrapper } from "../styles/layout";
+import { BaseLink } from "../components/Button/styles";
+
+import bookmarkIcon from "../assets/bookmark-icon.svg";
 
 function isNewsDetailPage(pathname) {
   const pathsList = [HOME_PATH, SEARCH_PATH, BOOKMARKS_PATH];
@@ -17,22 +22,18 @@ const SubHeader = () => {
   const location = useLocation();
 
   return (
-    <div
-      style={{
-        width: "445px",
-        display: "flex",
-        justifyContent: "space-between",
-        marginBottom: "20px",
-      }}
-    >
+    <SubHeaderWrapper>
       {isNewsDetailPage(location.pathname) ||
       isNewsSavedPage(location.pathname) ? (
         ""
       ) : (
-        <Link to={BOOKMARKS_PATH}>View Bookmarks</Link>
+        <BaseLink to={BOOKMARKS_PATH}>
+          <img src={bookmarkIcon} alt="Bookmark Icon" />
+          <span>view bookmark</span>
+        </BaseLink>
       )}
       {isNewsDetailPage(location.pathname) ? "" : <Sorting />}
-    </div>
+    </SubHeaderWrapper>
   );
 };
 
