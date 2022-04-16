@@ -1,6 +1,6 @@
-import AppRoutes from "../components/AppRoutes";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import AppRoutes from "./AppRoutes";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const AppLayout = () => {
   return (

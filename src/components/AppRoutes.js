@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
-import MainContent from "../components/MainContent";
-import Loading from "../components/Loading";
+import MainContent from "./MainContent";
+import Loading from "./Loading";
 
 import {
   HOME_PATH,
@@ -17,6 +17,7 @@ const NewsSavedPage = lazy(() => import("../pages/NewsSavedPage"));
 const NewsSearchPage = lazy(() => import("../pages/NewsSearchPage"));
 
 const NoMatchPage = lazy(() => import("../pages/NoMatchPage"));
+const TempPage = lazy(() => import("../pages/TempPage"));
 
 function AppRoutes() {
   return (
@@ -30,6 +31,7 @@ function AppRoutes() {
           </Route>
           <Route path={SEARCH_PATH} element={<NewsSearchPage />} />
           <Route path={BOOKMARKS_PATH} element={<NewsSavedPage />} />
+          <Route path="/temp" element={<TempPage />} />
           <Route path="*" element={<NoMatchPage />} />
         </Route>
       </Routes>

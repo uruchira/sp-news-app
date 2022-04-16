@@ -1,11 +1,17 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
+import useGlobalState from "../../hooks/useGlobalState";
 import useClickOutside from "../../hooks/useClickOutside";
 
+import searchIcon from "../../assets/search-icon.svg";
 import "./styles.css";
 
 function SearchBox() {
-  const clickRef = useRef();
+  const searchOuterRef = useRef();
+  const navigate = useNavigate();
+
+  const { setSearchText } = useGlobalState();
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -21,36 +27,40 @@ function SearchBox() {
     setSearchTerm(event.target.value);
   }
 
-  useClickOutside(clickRef, closeTextbox);
+  useClickOutside(searchOuterRef, closeTextbox);
 
   function handleOnSubmit(event) {
     event.preventDefault();
     if (!searchTerm) {
       closeTextbox();
     } else {
-      console.log(searchTerm + " is submitted");
+      setSearchText(searchTerm);
+      setSearchTerm("");
+      navigate("/search");
     }
   }
 
   return (
     <div className="sb-search-wrapper">
       <div
-        ref={clickRef}
+        ref={searchOuterRef}
         className={isOpen ? "sb-search sb-search-open" : "sb-search"}
       >
         <input
           type="search"
           className="sb-search-input"
-          placeholder="Enter your search term..."
+          placeholder="Search all news"
           value={searchTerm}
           onChange={handleOnChange}
         />
         <input
-          className="sb-search-submit"
           type="button"
+          className="sb-search-submit"
           onClick={handleOnSubmit}
         />
-        <span className="sb-icon-search" onClick={handleOnClick}></span>
+        <span className="sb-icon-search" onClick={handleOnClick}>
+          <img src={searchIcon} alt="Search Icon" />
+        </span>
       </div>
     </div>
   );

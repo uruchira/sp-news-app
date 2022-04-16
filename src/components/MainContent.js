@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import SubHeader from "../components/SubHeader";
+import SubHeader from "./SubHeader";
 
 const MainContent = () => {
   return (

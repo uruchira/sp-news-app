@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
 
-import SearchFilter from "./SearchFilter";
+import SearchBox from "../components/SearchBox";
 import { HOME_PATH } from "../constants";
+
+import { HeaderWrapper, HeaderContainer } from "../styles/layout";
+import logoOneIcon from "../assets/the.svg";
+import logoTwoIcon from "../assets/peaks.svg";
 
 const Header = () => {
   return (
-    <div style={{ display: "flex", marginBottom: "20px" }}>
-      <div className="logo">
-        <Link to={HOME_PATH}>The Peak News</Link>
-      </div>
-      <SearchFilter />
-    </div>
+    <HeaderWrapper>
+      <HeaderContainer>
+        <Link to={HOME_PATH}>
+          <img src={logoOneIcon} alt="The" />
+          <img src={logoTwoIcon} alt="Peaks" />
+        </Link>
+        <SearchBox />
+      </HeaderContainer>
+    </HeaderWrapper>
   );
 };
 
