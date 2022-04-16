@@ -32,3 +32,18 @@ export const BaseLink = styled(Link)`
   color: #fff;
   ${buttonAndLink}
 `;
+
+export const BaseSelect = styled.select`
+  border: none;
+  border-bottom: 1px solid #888;
+  width: 190px;
+  padding: 6px 3px;
+`;
+
+export const BaseHeader = styled.h1`
+  font-size: 2rem;
+`;
+
+export const BaseSubHeader = styled.h1`
+  font-size: 1.5rem;
+`;

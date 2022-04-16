@@ -47,7 +47,7 @@ export const FooterWrapper = styled.section`
 export const MainWrapper = styled.section`
   background-color: #fff;
   min-height: 80vh;
-  padding-top: 1rem;
+  padding-top: 2.5rem;
   width: 100%;
 `;
 
@@ -58,5 +58,16 @@ export const MainContainer = styled.div`
 
 export const SubHeaderWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+`;
+
+export const SortingSection = styled.div`
+  align-items: flex-end;
+  display: flex;
   justify-content: flex-end;
+  width: 368px;
+  & a {
+    margin-right: 1.5rem;
+  }
 `;

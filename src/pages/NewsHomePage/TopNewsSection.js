@@ -12,17 +12,12 @@ function TopNewsSection() {
   });
 
   return (
-    <>
-      <h3>Top News</h3>
-      <div>
-        <NewsGrid
-          status={status}
-          error={error}
-          isFetching={isFetching}
-          newsItems={data?.response.results}
-        />
-      </div>
-    </>
+    <NewsGrid
+      status={status}
+      error={error}
+      isFetching={isFetching}
+      newsItems={data?.response.results}
+    />
   );
 }
 

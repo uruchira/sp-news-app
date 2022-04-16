@@ -1,22 +1,6 @@
 import { css } from "@emotion/react";
 
 const globalStyles = css`
-  @font-face {
-    font-family: "georgia-regular";
-    src: url("../assets/fonts/georgia-webfont.woff") format("woff2"),
-      url("../assets/fonts/georgia-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "georgia-bold";
-    src: url("../assets/fonts/georgiab-webfont.woff2") format("woff2"),
-      url("../assets/fonts/georgiab-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
   * {
     margin: 0;
     padding: 0;
@@ -27,14 +11,14 @@ const globalStyles = css`
     background-color: #09357b;
     margin: 0;
     font-size: 14px;
-    font-family: "georgia-regular", Arial, sans-serif;
+    font-family: georgia, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1 {
-    font-size: 1.25rem;
-    font-family: "georgia-bold", Arial, sans-serif;
+    font-weight: bold;
+    font-family: georgia, Arial, sans-serif;
   }
 
   p {
@@ -56,6 +40,10 @@ const globalStyles = css`
   select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
     box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  }
+
+  select:focus {
+    outline: none;
   }
 
   @media print {

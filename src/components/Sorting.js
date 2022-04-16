@@ -1,6 +1,8 @@
 import useGlobalState from "../hooks/useGlobalState";
 import { SORTING_OPTIONS } from "../constants";
 
+import { BaseSelect } from "../styles/elements";
+
 const Sorting = () => {
   const { sortingOption, setSortingOption } = useGlobalState();
 
@@ -10,13 +12,13 @@ const Sorting = () => {
 
   return (
     <>
-      <select value={sortingOption} onChange={onOptionChange}>
+      <BaseSelect value={sortingOption} onChange={onOptionChange}>
         {SORTING_OPTIONS.map(({ id, value, label }) => (
           <option key={id} value={value}>
             {label}
           </option>
         ))}
-      </select>
+      </BaseSelect>
     </>
   );
 };

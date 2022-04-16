@@ -1,4 +1,4 @@
-import { BaseButton } from "./styles";
+import { BaseButton } from "../styles/elements";
 
 const Button = ({ variant = "primary", children, onClick }) => {
   return (

@@ -4,9 +4,8 @@ import Sorting from "./Sorting";
 
 import { HOME_PATH, SEARCH_PATH, BOOKMARKS_PATH } from "../constants";
 
-import { SubHeaderWrapper } from "../styles/layout";
-import { BaseLink } from "../components/Button/styles";
-
+import { SubHeaderWrapper, SortingSection } from "../styles/layout";
+import { BaseLink, BaseHeader } from "../styles/elements";
 import bookmarkIcon from "../assets/bookmark-icon.svg";
 
 function isNewsDetailPage(pathname) {
@@ -23,16 +22,19 @@ const SubHeader = () => {
 
   return (
     <SubHeaderWrapper>
-      {isNewsDetailPage(location.pathname) ||
-      isNewsSavedPage(location.pathname) ? (
-        ""
-      ) : (
-        <BaseLink to={BOOKMARKS_PATH}>
-          <img src={bookmarkIcon} alt="Bookmark Icon" />
-          <span>view bookmark</span>
-        </BaseLink>
-      )}
-      {isNewsDetailPage(location.pathname) ? "" : <Sorting />}
+      <BaseHeader>Top News</BaseHeader>
+      <SortingSection>
+        {isNewsDetailPage(location.pathname) ||
+        isNewsSavedPage(location.pathname) ? (
+          ""
+        ) : (
+          <BaseLink to={BOOKMARKS_PATH}>
+            <img src={bookmarkIcon} alt="Bookmark Icon" />
+            <span>view bookmark</span>
+          </BaseLink>
+        )}
+        {isNewsDetailPage(location.pathname) ? "" : <Sorting />}
+      </SortingSection>
     </SubHeaderWrapper>
   );
 };
