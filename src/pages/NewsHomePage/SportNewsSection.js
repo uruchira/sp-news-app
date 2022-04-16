@@ -4,6 +4,7 @@ import useArticles from "../../hooks/useArticles";
 import useGlobalState from "../../hooks/useGlobalState";
 
 import { BaseSubHeader } from "../../styles/elements";
+import { SportNewsWrapper } from "../../styles/layout";
 
 function SportNewsSection() {
   const { sortingOption } = useGlobalState();
@@ -16,13 +17,14 @@ function SportNewsSection() {
   return (
     <>
       <BaseSubHeader>Sports</BaseSubHeader>
-      <br />
-      <NewsGrid
-        status={status}
-        error={error}
-        isFetching={isFetching}
-        newsItems={data?.response.results}
-      />
+      <SportNewsWrapper>
+        <NewsGrid
+          status={status}
+          error={error}
+          isFetching={isFetching}
+          newsItems={data?.response.results}
+        />
+      </SportNewsWrapper>
     </>
   );
 }

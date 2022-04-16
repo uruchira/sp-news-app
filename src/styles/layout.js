@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.section`
@@ -81,4 +82,14 @@ export const NewsList = styled.div`
   & a:nth-of-type(3n) {
     margin-right: 0;
   }
+`;
+
+export const SportNewsWrapper = styled.div`
+  padding: 1rem 0 3rem;
+`;
+
+export const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
 `;

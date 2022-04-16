@@ -16,7 +16,7 @@ function SearchResultList({ qparams }) {
           newsItems={searchResults}
         />
       ) : (
-        <p>No search text is found</p>
+        <p>No search text is found.</p>
       )}
     </div>
   );

@@ -29,7 +29,7 @@ const NewsSavedSection = () => {
       {sortedBookmarks.length ? (
         <NewsGrid newsItems={sortedBookmarks} />
       ) : (
-        <p>No Bookmarks yet...</p>
+        <p>No Bookmarks are found.</p>
       )}
     </>
   );
