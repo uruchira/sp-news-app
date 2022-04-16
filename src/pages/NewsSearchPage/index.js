@@ -14,12 +14,7 @@ function ArticleSearchPage() {
     []
   );
 
-  return (
-    <>
-      <h3>Search Results</h3>
-      <SearchResultsSection qparams={{ searchText, sortingOption }} />
-    </>
-  );
+  return <SearchResultsSection qparams={{ searchText, sortingOption }} />;
 }
 
 export default ArticleSearchPage;

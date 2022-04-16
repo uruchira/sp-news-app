@@ -37,11 +37,11 @@ export const BaseSelect = styled.select`
   border: none;
   border-bottom: 1px solid #888;
   width: 190px;
-  padding: 6px 3px;
+  padding: 7px 0;
 `;
 
 export const BaseHeader = styled.h1`
-  font-size: 2rem;
+  font-size: 2.5rem;
 `;
 
 export const BaseSubHeader = styled.h1`

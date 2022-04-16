@@ -14,13 +14,7 @@ const ArticleSavedPage = () => {
     []
   );
 
-  return (
-    <>
-      <h3>All bookmarks</h3>
-      <br />
-      <NewsSavedSection />
-    </>
-  );
+  return <NewsSavedSection />;
 };
 
 export default ArticleSavedPage;

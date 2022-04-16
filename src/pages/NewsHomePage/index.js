@@ -19,7 +19,7 @@ function ArticleHomePage() {
     <>
       <TopNewsSection />
       <br />
-      <hr />
+      <br />
       <br />
       <SportNewsSection />
     </>
