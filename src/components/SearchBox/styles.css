@@ -1,6 +1,13 @@
+.sb-search-wrapper {
+  background-color: beige;
+  display: flex;
+  width: 500px;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
 .sb-search {
   position: relative;
-  margin-top: 10px;
   width: 0%;
   min-width: 60px;
   height: 60px;
@@ -10,7 +17,6 @@
   -webkit-transition: width 0.3s;
   -moz-transition: width 0.3s;
   transition: width 0.3s;
-
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
