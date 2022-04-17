@@ -62,14 +62,14 @@ export const MainContainer = styled.div`
 export const SubHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 `;
 
 export const SortingSection = styled.div`
   align-items: flex-end;
   display: flex;
   justify-content: flex-end;
-  width: 368px;
+  width: 385px;
   & a {
     margin-right: 1.5rem;
   }

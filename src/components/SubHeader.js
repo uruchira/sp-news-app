@@ -24,7 +24,7 @@ function setPageHeader(pathname) {
     case SEARCH_PATH:
       return "Search results";
     case BOOKMARKS_PATH:
-      return "All bookmarks";
+      return "All bookmark";
     default:
       return "";
   }

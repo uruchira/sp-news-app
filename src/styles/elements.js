@@ -14,7 +14,7 @@ const buttonAndLink = css`
   justify-content: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  width: 157px;
+  padding: 0px 11px 0 10px;
   & span {
     margin-left: 6px;
   }
@@ -30,6 +30,7 @@ export const BaseButton = styled.button`
 export const BaseLink = styled(Link)`
   background-color: #09357b;
   color: #fff;
+  cursor: pointer;
   ${buttonAndLink}
 `;
 
@@ -41,7 +42,7 @@ export const BaseSelect = styled.select`
 `;
 
 export const BaseHeader = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3rem;
 `;
 
 export const BaseSubHeader = styled.h1`
