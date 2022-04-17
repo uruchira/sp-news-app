@@ -1,4 +1,4 @@
-export const covertISOStringToDate = (isoString) => {
+export const fromISOStringToDate = (isoString) => {
   const options = {
     weekday: "long",
     year: "numeric",

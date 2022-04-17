@@ -31,6 +31,11 @@ const globalStyles = css`
     text-decoration: none;
   }
 
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus textarea:-webkit-autofill,

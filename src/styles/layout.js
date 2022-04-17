@@ -15,7 +15,8 @@ export const HeaderContainer = styled.div`
   height: 126px;
   justify-content: space-between;
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
 `;
 
 export const LogoLink = styled(Link)`
@@ -54,7 +55,8 @@ export const MainWrapper = styled.section`
 
 export const MainContainer = styled.div`
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
 `;
 
 export const SubHeaderWrapper = styled.div`
@@ -90,7 +92,13 @@ export const SportNewsWrapper = styled.div`
 `;
 
 export const LoadingWrapper = styled.div`
+  align-items: flex-start;
   display: flex;
   justify-content: center;
   padding-top: 100px;
+  height: 500px;
+`;
+
+export const FetchingWrapper = styled.div`
+  margin-bottom: 30px;
 `;

@@ -6,7 +6,8 @@ export const CardWrapper = styled.div`
   color: white;
   width: 350px;
   & h1 {
-    min-height: 90px;
+    height: 85px;
+    overflow: hidden;
   }
 
   & h1,
