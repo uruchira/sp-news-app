@@ -102,3 +102,32 @@ export const LoadingWrapper = styled.div`
 export const FetchingWrapper = styled.div`
   margin-bottom: 30px;
 `;
+
+export const DetailWrapper = styled.div`
+  display: flex;
+  max-width: 1200px;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  width: 100%;
+`;
+
+export const InfoWrapper = styled.div`
+  width: 65%;
+  & button,
+  & h1,
+  & h2,
+  & p {
+    margin-bottom: 1rem;
+  }
+`;
+
+export const BannerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  & img {
+    width: 72%;
+    object-fit: cover;
+  }
+`;

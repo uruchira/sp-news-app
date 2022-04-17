@@ -1,8 +1,13 @@
 import { BaseButton } from "../styles/elements";
 
-const Button = ({ variant = "primary", children, onClick }) => {
+const Button = ({
+  type = "button",
+  variant = "primary",
+  children,
+  onClick,
+}) => {
   return (
-    <BaseButton variant={variant} onClick={onClick}>
+    <BaseButton type={type} variant={variant} onClick={onClick}>
       {children}
     </BaseButton>
   );
