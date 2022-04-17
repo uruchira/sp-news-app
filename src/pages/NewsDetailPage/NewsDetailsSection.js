@@ -47,6 +47,7 @@ function DetailsSection({ id }) {
               <p>{fromISOStringToDate(singleArticle.webPublicationDate)}</p>
               <h1>{singleArticle.webTitle}</h1>
               <h2>{singleArticle.fields.headline}</h2>
+              <i />
               <div>{parse(singleArticle.fields.body)}</div>
             </InfoWrapper>
             <BannerWrapper>

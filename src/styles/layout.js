@@ -119,13 +119,23 @@ export const InfoWrapper = styled.div`
   & p {
     margin-bottom: 1rem;
   }
+
+  & h1 {
+    font-size: 2rem;
+  }
+
+  & i {
+    border-bottom: 1px solid #e9e9e9;
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 `;
 
 export const BannerWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 210px;
   width: 35%;
+  text-align: center;
   & img {
     width: 72%;
     object-fit: cover;

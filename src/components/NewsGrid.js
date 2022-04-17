@@ -14,7 +14,13 @@ const NewsGrid = ({ status, error, isFetching, newsItems = [] }) => {
         <i>Error: {error.message}</i>
       ) : (
         <>
-          <FetchingWrapper>{isFetching ? <Loading /> : ""}</FetchingWrapper>
+          {isFetching ? (
+            <FetchingWrapper>
+              <Loading />
+            </FetchingWrapper>
+          ) : (
+            ""
+          )}
           <NewsList>
             {newsItems.map((newsItem) => (
               <Link to={`/${newsItem.id}`} key={newsItem.id}>
