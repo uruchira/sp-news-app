@@ -1,12 +1,16 @@
-import AppRoutes from "../components/AppRoutes";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import AppRoutes from "./AppRoutes";
+import Footer from "./Footer";
+import Header from "./Header";
+
+import { MainWrapper } from "../styles/layout";
 
 const AppLayout = () => {
   return (
     <>
       <Header />
-      <AppRoutes />
+      <MainWrapper>
+        <AppRoutes />
+      </MainWrapper>
       <Footer />
     </>
   );

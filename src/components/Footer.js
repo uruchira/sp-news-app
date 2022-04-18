@@ -1,5 +1,7 @@
+import { FooterWrapper } from "../styles/layout";
+
 const Footer = () => {
-  return <h1>This is FOOTER</h1>;
+  return <FooterWrapper />;
 };
 
 export default Footer;

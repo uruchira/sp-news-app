@@ -1,11 +1,6 @@
-export const covertISOStringToDate = (isoString) => {
+export const fromISOStringToDate = (isoString) => {
   const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-    timeZoneName: "short",
+    dateStyle: "full",
   };
   return new Date(isoString).toLocaleDateString("en-US", options);
 };

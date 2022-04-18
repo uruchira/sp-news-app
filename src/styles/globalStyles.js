@@ -1,43 +1,39 @@
 import { css } from "@emotion/react";
 
 const globalStyles = css`
-  html {
-    font-family: "Roboto", sans-serif;
-    font-size: 0.875rem;
-    overflow-x: hidden;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   body {
+    background-color: #09357b;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-family: georgia, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body,
-  p,
-  button,
-  * {
-    font-kerning: normal;
-    margin: 0;
-    padding: 0;
+  h1 {
+    font-weight: bold;
+    font-family: georgia, Arial, sans-serif;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
   }
 
   a,
   a:active,
   a:visited {
     text-decoration: none;
-    color: brown;
   }
 
-  b {
-    font-weight: 500;
-  }
-
-  button {
-    border: none;
+  iframe {
+    width: 100%;
+    height: 100%;
   }
 
   input:-webkit-autofill,
@@ -51,12 +47,8 @@ const globalStyles = css`
     box-shadow: 0 0 0px 1000px #ffffff inset !important;
   }
 
-  .logo {
-    margin-right: 50px;
-  }
-
-  .logo a {
-    font-size: 2rem;
+  select:focus {
+    outline: none;
   }
 
   @media print {

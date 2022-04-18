@@ -18,9 +18,6 @@ function ArticleHomePage() {
   return (
     <>
       <TopNewsSection />
-      <br />
-      <hr />
-      <br />
       <SportNewsSection />
     </>
   );

@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
 
-import SubHeader from "../components/SubHeader";
+import SubHeader from "./SubHeader";
+
+import { MainContainer } from "../styles/layout";
 
 const MainContent = () => {
   return (
-    <section style={{ minHeight: "80vh" }}>
+    <MainContainer>
       <SubHeader />
       <Outlet />
-    </section>
+    </MainContainer>
   );
 };
 

@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
-import MainContent from "../components/MainContent";
-import Loading from "../components/Loading";
+import MainContent from "./MainContent";
+import Loading from "./Loading";
 
 import {
   HOME_PATH,
