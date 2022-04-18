@@ -78,7 +78,6 @@ export const SortingSection = styled.div`
 export const NewsList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   & a {
     margin: 0 75px 35px 0;
   }

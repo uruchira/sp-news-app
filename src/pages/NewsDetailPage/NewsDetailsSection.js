@@ -23,6 +23,18 @@ function DetailsSection({ id }) {
     return !!bookmarks.find((bookmark) => bookmark.id === id);
   }
 
+  const toasterStyles = {
+    backgroundColor: isBookmarked() ? "green" : "red",
+    borderRadius: "0",
+    color: "white",
+    fontFamily: '"Roboto", sans-serif',
+    fontSize: "0.75rem",
+    margin: "0 !important",
+    padding: "5px 0",
+    width: "100%",
+    textTransform: "uppercase",
+  };
+
   function notifyRemoveBookmark() {
     toast("removed from bookmarks", {
       position: "bottom-center",
@@ -51,9 +63,10 @@ function DetailsSection({ id }) {
         <Loading />
       ) : status === "error" ? (
         <i>Error: {error.message}</i>
+      ) : isFetching ? (
+        <Loading />
       ) : (
         <>
-          <i>{isFetching ? <Loading /> : ""}</i>
           <DetailWrapper>
             <InfoWrapper>
               {isBookmarked() ? (
@@ -89,17 +102,7 @@ function DetailsSection({ id }) {
               bottom: 0,
             }}
             toastOptions={{
-              style: {
-                backgroundColor: isBookmarked() ? "green" : "red",
-                borderRadius: "0",
-                color: "white",
-                fontFamily: '"Roboto", sans-serif',
-                fontSize: "0.75rem",
-                margin: "2px 0 0 0 !important",
-                padding: "5px 0",
-                width: "100%",
-                textTransform: "uppercase",
-              },
+              style: toasterStyles,
             }}
           />
         </>

@@ -19,15 +19,17 @@ const NewsGrid = ({ status, error, isFetching, newsItems = [] }) => {
               <Loading />
             </FetchingWrapper>
           ) : (
-            ""
+            <NewsList>
+              {newsItems.map((newsItem) => (
+                <Link to={`/${newsItem.id}`} key={newsItem.id}>
+                  <Card
+                    title={newsItem.webTitle}
+                    bodyText={newsItem.webTitle}
+                  />
+                </Link>
+              ))}
+            </NewsList>
           )}
-          <NewsList>
-            {newsItems.map((newsItem) => (
-              <Link to={`/${newsItem.id}`} key={newsItem.id}>
-                <Card title={newsItem.webTitle} bodyText={newsItem.webTitle} />
-              </Link>
-            ))}
-          </NewsList>
         </>
       )}
     </>
