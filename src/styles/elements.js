@@ -61,4 +61,7 @@ export const BaseHeader = styled.h1`
 
 export const BaseSubHeader = styled.h1`
   font-size: 1.5rem;
+  @media screen and (max-width: 1240px) {
+    padding: 0 1rem;
+  }
 `;

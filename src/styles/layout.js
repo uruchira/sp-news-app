@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-  @media screen and (max-width: 1260px) {
+  @media screen and (max-width: 1240px) {
     max-width: 1200px;
     padding: 0 1rem;
   }
@@ -84,7 +84,7 @@ export const SubHeaderWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 1.8rem;
-  @media screen and (max-width: 1260px) {
+  @media screen and (max-width: 1240px) {
     max-width: 1200px;
     padding: 0 1rem;
   }
@@ -116,12 +116,35 @@ export const SortingSection = styled.div`
 
 export const NewsList = styled.div`
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   & a {
-    margin: 0 75px 35px 0;
+    flex: 0 0 33%;
+    margin-bottom: 35px;
   }
   & a:nth-of-type(3n) {
-    margin-right: 0;
+    flex: 0;
+  }
+
+  @media screen and (max-width: 1240px) {
+    padding: 0 1rem;
+  }
+
+  @media screen and (max-width: 1150px) {
+    justify-content: space-around;
+    & a {
+      flex: 0 0 34%;
+    }
+  }
+
+  @media screen and (max-width: 786px) {
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    & a {
+      flex: unset;
+    }
   }
 `;
 
