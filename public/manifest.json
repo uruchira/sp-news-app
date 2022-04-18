@@ -1,7 +1,7 @@
 {
-  "short_name": "Runner App",
-  "name": "Ceylon Runner App",
-  "description": "This is a very simple progressive web application",
+  "short_name": "Peaks News App",
+  "name": "The Peaks News App",
+  "description": "A simple news application powered by the The Guardian - Open Platform",
   "icons": [
     {
       "src": "favicon.ico",
@@ -29,6 +29,6 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#000000",
+  "theme_color": "#09357b",
   "background_color": "#FFFFFF"
 }
