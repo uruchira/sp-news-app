@@ -6,6 +6,12 @@
   align-items: flex-end;
 }
 
+@media only screen and (max-width: 576px) {
+  .sb-search-wrapper {
+    width: 100%;
+  }
+}
+
 .sb-search {
   position: relative;
   width: 0%;

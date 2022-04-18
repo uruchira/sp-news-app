@@ -12,11 +12,25 @@ export const HeaderContainer = styled.div`
   align-items: center;
   color: #fff;
   display: flex;
+  flex-direction: row;
   height: 126px;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
+  @media screen and (max-width: 1260px) {
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  @media screen and (max-width: 720px) {
+    max-width: 720px;
+  }
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
 `;
 
 export const LogoLink = styled(Link)`
@@ -33,11 +47,17 @@ export const LogoOne = styled.img`
   position: absolute;
   right: 53px;
   top: 35px;
+  @media screen and (max-width: 576px) {
+    top: 12px;
+  }
 `;
 
 export const LogoTwo = styled.img`
   position: absolute;
   bottom: 41px;
+  @media screen and (max-width: 576px) {
+    bottom: 0;
+  }
 `;
 
 export const FooterWrapper = styled.section`
@@ -61,8 +81,17 @@ export const MainContainer = styled.div`
 
 export const SubHeaderWrapper = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 1.8rem;
+  @media screen and (max-width: 1260px) {
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
 `;
 
 export const SortingSection = styled.div`
@@ -72,6 +101,16 @@ export const SortingSection = styled.div`
   width: 385px;
   & a {
     margin-right: 1.5rem;
+  }
+  @media screen and (max-width: 768px) {
+    width: 315px;
+    & a {
+      margin-right: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
   }
 `;
 

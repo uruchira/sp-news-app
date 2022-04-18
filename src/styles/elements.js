@@ -39,10 +39,24 @@ export const BaseSelect = styled.select`
   border-bottom: 1px solid #888;
   width: 190px;
   padding: 7px 0;
+  @media screen and (max-width: 768px) {
+    width: 120px;
+  }
 `;
 
 export const BaseHeader = styled.h1`
   font-size: 3rem;
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 720px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const BaseSubHeader = styled.h1`
