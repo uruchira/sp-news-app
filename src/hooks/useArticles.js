@@ -8,7 +8,7 @@ const getArticles = async ({
   pageSize = 10,
 }) => {
   const { data } = await apiClient.get(
-    `/search?section=${newsType}&q=${searchText}&order-by=${sortingOption}&page-size=${pageSize}&api-key=test`
+    `/search?section=${newsType}&q=${searchText}&order-by=${sortingOption}&page-size=${pageSize}&show-fields=thumbnail&api-key=test`
   );
   return data;
 };

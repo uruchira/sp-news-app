@@ -27,12 +27,19 @@ export const CardWrapper = styled.div`
 export const CardImage = styled.div`
   align-items: center;
   background-color: rgba(13, 71, 161, 1);
-  background-image: url(${placeholderOne}), url(${placeholderTwo});
+  background-image: ${(props) =>
+    props.bgImage === "noImage"
+      ? `url(${placeholderOne}), url(${placeholderTwo})`
+      : "none"};
   background-position: 117px 70px, 60px 100px;
   background-repeat: no-repeat, no-repeat;
-  height: 216px;
+  height: 210px;
   display: flex;
   justify-content: center;
+  & img {
+    height: 210px;
+    object-fit: cover;
+  }
 `;
 
 export const CardBottom = styled.div`

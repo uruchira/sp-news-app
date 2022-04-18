@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 
-import { NewsList, FetchingWrapper } from "../styles/layout";
+import { NewsList } from "../styles/layout";
 
 import Card from "./Card";
 
@@ -15,14 +15,13 @@ const NewsGrid = ({ status, error, isFetching, newsItems = [] }) => {
       ) : (
         <>
           {isFetching ? (
-            <FetchingWrapper>
-              <Loading />
-            </FetchingWrapper>
+            <Loading />
           ) : (
             <NewsList>
               {newsItems.map((newsItem) => (
                 <Link to={`/${newsItem.id}`} key={newsItem.id}>
                   <Card
+                    src={newsItem?.fields?.thumbnail}
                     title={newsItem.webTitle}
                     bodyText={newsItem.webTitle}
                   />

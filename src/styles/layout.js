@@ -98,10 +98,6 @@ export const LoadingWrapper = styled.div`
   height: 500px;
 `;
 
-export const FetchingWrapper = styled.div`
-  margin-bottom: 30px;
-`;
-
 export const DetailWrapper = styled.div`
   display: flex;
   max-width: 1200px;
