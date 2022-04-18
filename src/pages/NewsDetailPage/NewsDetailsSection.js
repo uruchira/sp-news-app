@@ -83,6 +83,14 @@ function DetailsSection({ id }) {
               <p>{fromISOStringToDate(singleArticle.webPublicationDate)}</p>
               <h1>{singleArticle.webTitle}</h1>
               <h2>{singleArticle.fields.headline}</h2>
+              <>
+                {singleArticle.fields.thumbnail && (
+                  <img
+                    src={singleArticle.fields.thumbnail}
+                    alt={singleArticle.webTitle}
+                  />
+                )}
+              </>
               <i />
               <div>{parse(singleArticle.fields.body)}</div>
             </InfoWrapper>

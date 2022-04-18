@@ -166,6 +166,10 @@ export const DetailWrapper = styled.div`
   min-height: 100vh;
   padding-bottom: 3rem;
   width: 100%;
+  @media screen and (max-width: 1240px) {
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
 `;
 
 export const InfoWrapper = styled.div`
@@ -187,6 +191,17 @@ export const InfoWrapper = styled.div`
     margin-bottom: 1rem;
     width: 100%;
   }
+
+  & img {
+    display: none;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & img {
+      display: block;
+    }
+  }
 `;
 
 export const BannerWrapper = styled.div`
@@ -194,7 +209,13 @@ export const BannerWrapper = styled.div`
   width: 35%;
   text-align: center;
   & img {
-    width: 72%;
+    width: 80%;
     object-fit: cover;
+    display: inline-block;
+  }
+  @media screen and (max-width: 1200px) {
+    & img {
+      display: none;
+    }
   }
 `;
